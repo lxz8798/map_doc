@@ -1,3 +1,10 @@
+/*
+ * @Author: lixz lixz@qq.com
+ * @LastEditTime: 2022-08-09 18:02:19
+ * @FilePath: \map-doc\src\pages\mapInit\index.js
+ * @Description: 地图初始化-首页
+ * 有需要可以联:lxz8798(微信号)或9544605@qq.com
+ */
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';

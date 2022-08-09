@@ -1,6 +1,11 @@
+/*
+ * @Author: lixz lixz@qq.com
+ * @LastEditTime: 2022-08-09 18:00:30
+ * @FilePath: \map-doc\src\pages\api\index.js
+ * @Description: 地图方法API
+ * 有需要可以联:lxz8798(微信号)或9544605@qq.com
+ */
 import React from 'react';
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 

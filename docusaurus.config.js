@@ -86,19 +86,19 @@ const config = {
           //   position: 'right',
           // },
           {
-            to: '/fn',
-            label: '方法',
+            to: '/docs/category/api',
+            label: '接口',
             position: 'right',
-            className: 'navbar_fn'
+            className: 'navbar_api'
           },
           {
-            to: '/types',
+            to: '/docs/types',
             label: '类型',
             position: 'right',
             className: 'navbar_types'
           },
           {
-            to: '/mapping',
+            to: '/docs/mapping',
             label: '字典',
             position: 'right',
             className: 'navbar_mapping'

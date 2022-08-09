@@ -1,2 +1,18 @@
 .mapTypesBox {
+	width: 500px;
+	height: 630px;
+	margin-left: 15px;
+
+	display: flex;
+	flex-direction: column;
+
+	:global(.dg-html) {
+		height: 50%;
+		// flex: 1 0 auto;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+	:global(.dg-html:nth-child(1)) {
+		margin-bottom: 10px;
+	}
 }

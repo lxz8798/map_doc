@@ -1,7 +1,7 @@
 $mapMinHeight: 630px;
 
 .mapInitBox {
-  width: 100%;
+  width: calc(100% - 510px);
   min-height: $mapMinHeight;
 
   display:flex;

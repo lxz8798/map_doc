@@ -1,13 +1,11 @@
 /*
  * @Author: lixz lixz@qq.com
- * @LastEditTime: 2022-08-09 10:00:05
+ * @LastEditTime: 2022-08-09 14:49:51
  * @FilePath: \map-doc\src\pages\index.js
  * @Description: 
  * 有需要可以联:lxz8798(微信号)或9544605@qq.com
  */
 import React from 'react';
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 
@@ -17,6 +15,7 @@ import styles from './index.module.scss';
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
+  
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
