@@ -1,0 +1,19 @@
+$mapMinHeight: 630px;
+
+.mapInitBox {
+  width: 100%;
+  min-height: $mapMinHeight;
+
+  display:flex;
+  .map {
+    width: 100%;
+    flex: 1;
+    
+    :global(.ol-viewport) {
+      height: 100%;
+      :global(.ol-overlaycontainer-stopevent) {
+        display: none;
+      }
+    }
+  }
+}
