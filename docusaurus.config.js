@@ -86,7 +86,7 @@ const config = {
             className: 'navbar_mapping'
           },
           {
-            to: '/docs/types',
+            to: '/docs/category/types',
             label: '类型',
             position: 'left',
             className: 'navbar_types'
@@ -119,7 +119,7 @@ const config = {
             items: [
               {
                 label: '地图',
-                to: '/map/init',
+                to: '/docs/api/Ainit',
               },
             ],
           },
@@ -128,15 +128,15 @@ const config = {
             items: [
               {
                 label: '渲染点相关',
-                to: '/map/point',
+                to: '/docs/api/Bpoint',
               },
               {
                 label: '渲染线相关',
-                to: '/map/line',
+                to: '/docs/api/Cline',
               },
               {
                 label: '渲染面相关',
-                to: '/polygon',
+                to: '/docs/api/Dpolygon',
               },
             ],
           },
@@ -145,7 +145,7 @@ const config = {
             items: [
               {
                 label: '目标详情',
-                to: '/map/detail',
+                to: '/docs/mapping',
               }
             ],
           },
