@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 
 const docOption = {
-  remote: 'default',
+  remote: 'master',
   branchName: 'lixz',
   title: "JD_PUBLIC_MAP_DOC"
 }
@@ -15,7 +15,7 @@ const docOption = {
 const config = {
   title: docOption.title,
   tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'http://192.168.1.99:8080',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -73,35 +73,41 @@ const config = {
           src: 'img/logo_black.png',
         },
         items: [
-          // {
-          //   type: 'doc',
-          //   docId: 'intro',
-          //   position: 'left',
-          //   label: 'Tutorial',
-          // },
-          // {to: '/blog', label: 'Blog', position: 'left'},
-          // {
-          //   href: 'https://github.com/facebook/docusaurus',
-          //   label: 'GitHub',
-          //   position: 'right',
-          // },
           {
             to: '/docs/category/api',
             label: '接口',
-            position: 'right',
+            position: 'left',
             className: 'navbar_api'
-          },
-          {
-            to: '/docs/types',
-            label: '类型',
-            position: 'right',
-            className: 'navbar_types'
           },
           {
             to: '/docs/mapping',
             label: '字典',
-            position: 'right',
+            position: 'left',
             className: 'navbar_mapping'
+          },
+          {
+            to: '/docs/types',
+            label: '类型',
+            position: 'left',
+            className: 'navbar_types'
+          },
+          {
+            href: 'http://106.13.81.120:8090/lixz/from_vue2_null_project',
+            label: 'JD-VUE2.0空白框架',
+            position: 'right',
+            className: 'navbar_vue2'
+          },
+          {
+            href: 'http://106.13.81.120:8090/lixz/jd_map_fn',
+            label: 'JD-MAP-FN',
+            position: 'right',
+            className: 'navbar_map_fn'
+          },
+          {
+            href: 'http://106.13.81.120:8090/development/RD_No_Three/JD2022S004_TFZHJT_GROUP/ZHJTJC_GROUP/ZHJTJC_F/commits/dev',
+            label: 'JD-VUE3.0监测项目',
+            position: 'right',
+            className: 'navbar_jc'
           }
         ],
       },
