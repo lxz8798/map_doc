@@ -1,0 +1,8 @@
+{
+  "label": "图表类",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "图表类组件，可以直接使用，后面会更新VUE3版本;"
+  }
+}

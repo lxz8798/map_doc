@@ -13,7 +13,7 @@
       </li>
     </ul>
     <ul class="ulList">
-      <li v-for="(item, index) in datas" :key="index" class="data-list" :style="{background: index % 2 ? options.keysBG : options.stripesColor, color: options.textColor || '#000'}">
+      <li v-for="(item, index) in datas" :key="index" class="data-list" :style="{background: index % 2 && options.openStripe ? options.keysBG : options.stripesColor, color: options.textColor || '#000'}">
         <span v-for="(key, index) in Object.keys(datas[0])">
            {{item[key]}}
         </span>

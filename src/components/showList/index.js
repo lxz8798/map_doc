@@ -1,7 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-// import Image from '@theme/IdealImage';
 import Translate from '@docusaurus/Translate';
 
 const Playgrounds = [
@@ -23,8 +22,9 @@ function PlaygroundCard({name, image, url, description}) {
       <div className="col col--6 margin-bottom--lg">
         <div className={clsx('card')}>
           <div className={clsx('card__image')}>
+            asdcasdcas
             <Link to={url}>
-              {/* <Image img={image} alt={`${name}'s image`} /> */}
+                <img href={image} width="350" height="250" />
             </Link>
           </div>
           <div className="card__body">
@@ -46,9 +46,7 @@ function PlaygroundCard({name, image, url, description}) {
 export function PlaygroundCardsRow() {
     return (
         <div className="row">
-          {Playgrounds.map((playground) => (
-            <PlaygroundCard key={playground.name} {...playground} />
-          ))}
+          ssssss
         </div>
     );
 }

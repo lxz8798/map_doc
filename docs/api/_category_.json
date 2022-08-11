@@ -1,8 +1,8 @@
 {
-  "label": "API",
+  "label": "方法接口",
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "这里是地图API介绍."
+    "description": "这里介绍了地图通用方法的接口，灌入数据即可上显投入使用，平常可能需要5分钟开发时间的过程，节省到30秒."
   }
 }

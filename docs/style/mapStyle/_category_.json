@@ -1,0 +1,8 @@
+{
+  "label": "地图样式",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "总结了一些地图类相关的样式，比如：点、线、面。"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "label": "图表类样式",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "总结了一些图表类相关的样式，比如：X轴，Y轴等等。"
+  }
+}

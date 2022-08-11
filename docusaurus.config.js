@@ -16,7 +16,7 @@ const config = {
   title: docOption.title,
   tagline: 'Dinosaurs are cool',
   url: 'http://192.168.1.99:8080',
-  baseUrl: '/',
+  baseUrl: '/mapdoc/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -74,28 +74,22 @@ const config = {
         },
         items: [
           {
-            to: '/docs/category/comp',
+            to: '/docs/category/通用组件',
             label: 'VUE通用组件',
             position: 'left',
             className: 'navbar_comp'
           },
           {
-            to: '/docs/category/api',
+            to: '/docs/category/方法接口',
             label: '接口',
             position: 'left',
             className: 'navbar_api'
           },
           {
-            to: '/docs/category/types',
+            to: '/docs/category/类型',
             label: '类型',
             position: 'left',
             className: 'navbar_types'
-          },
-          {
-            to: '/docs/mapping',
-            label: '字典',
-            position: 'left',
-            className: 'navbar_mapping'
           },
           {
             href: 'http://106.13.81.120:8090/lixz/from_vue2_null_project',
