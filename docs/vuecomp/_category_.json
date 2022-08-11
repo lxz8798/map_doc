@@ -1,0 +1,8 @@
+{
+  "label": "COMP",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "VUE组件."
+  }
+}

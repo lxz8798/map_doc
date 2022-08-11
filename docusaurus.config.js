@@ -74,22 +74,28 @@ const config = {
         },
         items: [
           {
+            to: '/docs/category/comp',
+            label: 'VUE通用组件',
+            position: 'left',
+            className: 'navbar_comp'
+          },
+          {
             to: '/docs/category/api',
             label: '接口',
             position: 'left',
             className: 'navbar_api'
           },
           {
-            to: '/docs/mapping',
-            label: '字典',
-            position: 'left',
-            className: 'navbar_mapping'
-          },
-          {
             to: '/docs/category/types',
             label: '类型',
             position: 'left',
             className: 'navbar_types'
+          },
+          {
+            to: '/docs/mapping',
+            label: '字典',
+            position: 'left',
+            className: 'navbar_mapping'
           },
           {
             href: 'http://106.13.81.120:8090/lixz/from_vue2_null_project',
@@ -114,6 +120,15 @@ const config = {
       footer: {
         style: 'dark',
         links: [
+          {
+            title: 'VUE通用组件',
+            items: [
+              {
+                label: '地图',
+                to: '/docs/api/Ainit',
+              },
+            ],
+          },
           {
             title: '文档',
             items: [
