@@ -1,13 +1,13 @@
 <!--
  * @Author: lixz lixz@qq.com
- * @LastEditTime: 2022-08-11 20:32:54
- * @FilePath: \map-doc\static\vueComp\charts\barChart.vue
+ * @LastEditTime: 2022-08-12 14:51:09
+ * @FilePath: \map-doc\static\vueComp\charts\barChart_VUE2.vue
  * @Description: 
  * 有需要可以联:lxz8798(微信号)或9544605@qq.com
 -->
 <template>
 	<div class="chart_box">
-    <div :id="keyId"></div>
+    <div :id="props.options.keyId"></div>
   </div>
 </template>
 
@@ -90,7 +90,7 @@ export default {
 		// 设置x轴的方法，这个方法在实际开发中可以用也可以不用
 		setyAxis() {
 			let yAxis = [];
-			let yname = this.chartlist[this.options.valType].yname;
+			let yname = this.chartlist[this.options.valType || "chart1"].yname;
 
 			yname.forEach((item, i) => {
 				yAxis.push({
@@ -111,97 +111,104 @@ export default {
 		// 设置Series的方法，这个方法在实际开发中可以用也可以不用
 		setSeries(newData) {
 			let serier = [];
-			let arr = this.chartlist[this.options.valType].nameList;
+			let arr = chartlist[props.options.valType || "chart1"].nameList;
 			arr.forEach((item, index) => {
 				serier.push({
-					//折线(数据)
-					name: item,
-					type: this.chartlist[this.options.valType].types[index],
-					smooth: this.options.smooth, //线条是否圆润
-					symbolSize: 5, //标记点大小
-					symbol: "circle", //折点设定为实心点
-					yAxisIndex: index < this.chartlist[this.options.valType].yname.length ? index : 0,
-					areaStyle: {
-						shadowColor: "rgba(148, 95, 185, 0.5)",
-						shadowBlur: 20, //阴影
-						color: new proxy.$es.graphic.LinearGradient(0, 0, 0, 1, [
-							{
-								offset: 0,
-								color: this.options.areaStyle
-									? this.chartlist[this.options.valType].colorList[index] + "8c"
-									: this.chartlist[this.options.valType].colorList[index] + "00",
-							},
-							{
-								offset: 1,
-								color: this.options.areaStyle
-									? this.chartlist[this.options.valType].colorList[index] + "1a"
-									: this.chartlist[this.options.valType].colorList[index] + "00",
-							},
-						]), // 区域线条渐变色
+				//折线(数据)
+				name: item,
+				type: chartlist[props.options.valType || "chart1"].types[index],
+				smooth: props.options.smooth, //线条是否圆润
+				symbolSize: 5, //标记点大小
+				symbol: "circle", //折点设定为实心点
+				yAxisIndex: index < chartlist[props.options.valType || "chart1"].yname.length ? index : 0,
+				areaStyle: {
+					shadowColor: "rgba(148, 95, 185, 0.5)",
+					shadowBlur: 20, //阴影
+					color: new proxy.$es.graphic.LinearGradient(0, 0, 0, 1, [
+					{
+						offset: 0,
+						color: props.options.areaStyle
+						? chartlist[props.options.valType || "chart1"].colorList[index] + "8c"
+						: chartlist[props.options.valType || "chart1"].colorList[index] + "00",
 					},
-					data: newData[newData.name[index]],
+					{
+						offset: 1,
+						color: props.options.areaStyle
+						? chartlist[props.options.valType || "chart1"].colorList[index] + "1a"
+						: chartlist[props.options.valType || "chart1"].colorList[index] + "00",
+					},
+					]), // 区域线条渐变色
+				},
+				data: newData[newData.name[index]],
+				lineStyle: {
+					type: props.options.lineType,
+					width: 1,
+				},
+				itemStyle: {
+					color: new proxy.$es.graphic.LinearGradient(0, 0, 0, 1, [
+					{
+						offset: 0,
+						color: props.options.barStyle
+						? chartlist[props.options.valType || "chart1"].colorList[index]
+						: chartlist[props.options.valType || "chart1"].colorList[index],
+					},
+					{
+						offset: 1,
+						color: props.options.barStyle
+						? chartlist[props.options.valType || "chart1"].colorList[index] + "34"
+						: chartlist[props.options.valType || "chart1"].colorList[index],
+					},
+					]),
+					borderRadius: fn.fontChart(props.options.barRadius),
 					lineStyle: {
-						type: this.options.lineType,
-						width: 1,
+					color: chartlist[props.options.valType || "chart1"].colorList[2],
 					},
-					itemStyle: {
-						color: new proxy.$es.graphic.LinearGradient(0, 0, 0, 1, [
-							{
-								offset: 0,
-								color: this.options.barStyle
-									? this.chartlist[this.options.valType].colorList[index]
-									: this.chartlist[this.options.valType].colorList[index],
-							},
-							{
-								offset: 1,
-								color: this.options.barStyle
-									? this.chartlist[this.options.valType].colorList[index] + "34"
-									: this.chartlist[this.options.valType].colorList[index],
-							},
-						]),
-						borderRadius: this.$fn.fontChart(this.options.barRadius),
-						lineStyle: {
-							color: this.chartlist[this.options.valType].colorList[2],
-						},
-					},
-					barWidth: this.$fn.fontChart(this.options.barWidth),
+				},
+				barWidth: fn.fontChart(props.options.barWidth),
 				});
 			});
 			return serier;
 		},
 		initCharts(newData) {
+			const grid = {              // 离边边的距离
+				left: "6%",
+				right: "6%",
+				top: "18%",
+				bottom: "6%",
+				containLabel: true,
+			}
 			// this.$es 是mian里面对echarts的引用
 			const myChart = this.$es.init(document.getElementById(this.options.keyId));
 			// echarts配置
 			let option = {
 				tooltip: {
-					//提示框设置
-					trigger: "axis",
-					...esSame.TOOL_TIP,
+				//提示框设置
+				trigger: "axis",
+				...esSame.TOOL_TIP,
 				},
 				grid: {
-					//设置内容区域距离周边的距离
-					...this.options.grid,
+				//设置内容区域距离周边的距离
+				...props.options.grid || grid,
 				},
 				legend: {
-					top: this.options.legendT,
-					right: this.options.legendR,
-					textStyle: {
-						color: "#EAEFF5",
-						fontSize: this.$fn.fontChart(24),   // 这里的this.$fn需要修改，一般情况下在VUE2是挂载到一个公用的方法下，然后调用 
-					},
-					itemWidth: this.$fn.fontChart(24),
-					itemHeight: this.$fn.fontChart(24),
+				top: props.options.legendT || "5%",
+				right: props.options.legendR || "5%",
+				textStyle: {
+					color: "#EAEFF5",
+					fontSize: fn.fontChart(24),
+				},
+				itemWidth: fn.fontChart(24),
+				itemHeight: fn.fontChart(24),
 				},
 				xAxis: [
-					{
-						type: "category",
-						data: newData.xlist,
-						...esSame.X_AXIS,
-					},
+				{
+					type: "category",
+					data: newData.xlist,
+					...esSame.X_AXIS,
+				},
 				],
-				yAxis: this.setyAxis(),
-				series: this.setSeries(newData),
+				yAxis: setyAxis(),
+				series: setSeries(newData),
 			};
 			myChart.setOption(option, true);
 		}

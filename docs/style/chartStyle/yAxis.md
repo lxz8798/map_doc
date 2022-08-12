@@ -1,4 +1,7 @@
 # Y轴的样式
+
+> Y轴的样式
+
 ```js
 //获取到屏幕的宽度echart字体大小
 const fontChart = function (res) {

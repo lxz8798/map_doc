@@ -1,25 +1,25 @@
-<!--
- * @Author: lixz lixz@qq.com
- * @LastEditTime: 2022-08-10 19:13:55
- * @FilePath: \map-doc\docs\api\dpolygon.md
- * @Description: 
- * 有需要可以联:lxz8798(微信号)或9544605@qq.com
--->
-# 渲染面和多边形
+# 面和多边形
+
+### 数据类型
+```js
+// 从接口返回的数据
+const datas = [..., [104.12, 30,12], [104.13, 30,13], ...];
+```
 
 ### 使用方法
 
-#### 天府新区电子围栏-固定数据
 ```js
 // 天府新区电子围栏
-import polygonLayer from "@/utils/map/polygon/";
-
-// 其他VUE文件中，需要确保有map对象
-map.addLayer(polygonLayer);
+import tianfuPolygon from "./tianfu.json";
+import polygonLayer from "@/utils/map/polygon/layer.js";
+// 这里灌入数据
+map.addLayer(polygonLayer(tianfuPolygon));
+map.setZIndex(2); // 面在第二层
 ```
 
-#### 根据接口动态展示
-```js
-```
+### 修改样式
+- 现阶段以快速开发为主，所以解出style.js修改文件里面的样式就可以了
+
 
 ### 文件下载地址
+[文件集合](../../static/file/map/polygon/polygon.rar)

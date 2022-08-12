@@ -155,4 +155,4 @@ import lineChartComp from "@/components/charts/lineChart";
 ```
 
 ### 下载地址
-[VUE2_LINE_CHART](../../../static/vueComp/charts/lineChart.vue) | [ES_SAME](../../../static/file/echarts/types.js)
+[VUE2](../../../static/vueComp/charts/lineChart_VUE2.vue) | [VUE3](../../../static/vueComp/charts/lineChart_VUE3.vue) | [ES_SAME](../../../static/file/echarts/types.js)

@@ -1,5 +1,7 @@
 # 图标类型
 
+> 根据点的类型返回相对应的图层名称和图标
+
 ```js
 // icontype.js
 import { TYPES } from './types';

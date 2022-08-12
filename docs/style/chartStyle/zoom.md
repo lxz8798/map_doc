@@ -1,5 +1,7 @@
 # 滑动轴的样式
 
+> 滑动轴的样式
+
 ```js
 const ZOOM_DATA = {
     xAxisIndex: 0, //这里是从X轴的0刻度开始

@@ -1,8 +1,8 @@
 {
-  "label": "入门",
+  "label": "使用指南",
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "这里会详情的介绍此文档，比如：如何使用组件，如何使用公共样式，如何使用地图等等。"
+    "description": "根据步骤可以很轻松的使用此文档里的方法和组件。"
   }
 }

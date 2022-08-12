@@ -1,7 +1,7 @@
 <!--
  * @Author: lixz lixz@qq.com
- * @LastEditTime: 2022-08-11 20:03:09
- * @FilePath: \map-doc\static\vueComp\charts\lineChart.vue
+ * @LastEditTime: 2022-08-12 14:53:14
+ * @FilePath: \map-doc\static\vueComp\charts\lineChart_VUE2.vue
  * @Description: 
  * 有需要可以联:lxz8798(微信号)或9544605@qq.com
 -->
@@ -64,10 +64,10 @@ export default {
 					top: "18%",
 				},
 				legend: {
-					show: this.options.legends,
+					show: this.options.legends || false,
 					orient: "horizontal",
-					top: this.options.legendT,
-					right: this.options.legendR,
+					top: this.options.legendT || '5%',
+					right: this.options.legendR || '5%',
 					textStyle: {
 						color: "#EAEFF5",
 						fontSize: this.$fn.fontChart(24),  // 这里的this.$fn需要修改，一般情况下在VUE2是挂载到一个公用的方法下，然后调用 
@@ -85,32 +85,32 @@ export default {
 				yAxis: [
 					{
 						type: "value",
-						name: this.options.yname,
+						name: this.options.yname || "(个)",
 						...esSame.Y_AXIS,
 					},
 				],
 				series: [
 					{
-						name: this.options.name,
+						name: this.options.name || "",
 						type: "line",
-						smooth: this.options.smooth, //线条是否圆润
-						symbol: this.options.symbol, //标记点类型
-						symbolSize: this.$fn.fontChart(this.options.point), //标记点大小
+						smooth: this.options.smooth || true, //线条是否圆润
+						symbol: this.options.symbol || "none", //标记点类型
+						symbolSize: this.$fn.fontChart(this.options.point || 10), //标记点大小
 						data: this.options.chartData,
 						itemStyle: {
 							//线
-							color: this.options.color,
+							color: this.options.color || "#26CF99",
 						},
 						areaStyle: {
 							// 区域渐变色
 							color: new es.graphic.LinearGradient(0, 0, 0, 1, [
 								{
 									offset: 0,
-									color: this.options.areaStyle ? this.options.color + "99" : this.options.color + "00",
+									color: this.options.color ? this.options.areaStyle ? this.options.color + "99"  : this.options.color + "00" : "#26CF9999",
 								},
 								{
 									offset: 1,
-									color: this.options.areaStyle ? this.options.color + "1a" : this.options.color + "00",
+									color: this.options.color ? this.options.areaStyle ? this.options.color + "1a" : this.options.color + "00" : "#26CF991a",
 								},
 							]),
 						},

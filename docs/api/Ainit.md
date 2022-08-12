@@ -75,17 +75,15 @@ onBeforeUnmount(() => {
 // DEFINEEXPOSE
 defineExpose({
   map,
-  overlay,
 });
 ```
 
 ### 文件下载地址
 [VUE2](../../static/file/map/init/vue2.vue) | [VUE3](../../static/file/map/init/vue3.vue) | [LAYER](../../static/file/map/init/layer.js)
 
-### 在VUE文件中使用
+### 使用方法
 
-
-### 在vue2中使用
+- VUE2
 ```js
 <template>
 	<public-map :mapName="'homeMap'" ref="homeMapRef"></public-map>
@@ -97,12 +95,13 @@ onMounted() {
 	this.$bus.$on('mapInit', map => {
 		map.setTarget("homeMap");
 		map.addLayer(mapLayer);
+		map.setZIndex(1); // 地图瓦片层永远是层级1
 	});
 }
 ```
 
-### 在vue3中使用
-```
+- VUE3
+```js
 <template>
 	<public-map :mapName="'homeMap'" ref="homeMapRef"></public-map>
 </template>
@@ -115,6 +114,7 @@ import { mapLayer } from "../utils/map/init/layer.js";
 const { map } = homeMapRef.value;
 map.setTarget("homeMap");
 map.addLayer(mapLayer);
+map.setZIndex(1); // 地图瓦片层永远是层级1
 ```
 
 ### LAYER介绍

@@ -1,43 +1,49 @@
 # 渲染线
 
+### 数据类型
+```js
+// 从接口返回的数据
+const datas = [[104.12, 30,12], [104.13, 30,13]];
+```
+
 ### 使用方法
 
-#### 数据类型
+- 第一种LINE
 ```js
-const lineDatas = [[104.12, 30,12], [104.13, 30,13];
+import lineLayer from "@/utils/map/line/layer"; // 引入文件
+const layer = lineLayer(datas); // 得到图层
+map.addLayer(lineLayer); // 上显图层
 ```
 
-#### 第一种LINE
+- 第二种LINESTRING
 ```js
-import lineLayer from "@/utils/map/line/layer";
-const layer = lineLayer(lineDatas);
-map.addLayer(lineLayer);
-```
-
-#### 第二种LINESTRING
-```js
-import { getRoutes } from "@/utils/map/lineString/features";
+ // 引入文件
+import { getRoutes } from "@/utils/map/lineString/features"; 
 import lineStringLayer from "@/utils/map/lineString/layer";
-
-const { routeFeature, geoMarker, startMarker, endMarker, position } = getRoutes(_routes, false); // 第二个参数代码是否显示图标
-const layer = lineStringLayer([routeFeature, geoMarker, startMarker, endMarker], 'lineLayerStringName');
-map.addLayer(layer);
+// getRoutes会返回5个对象，分别对应路径本身，行走线路上的目标，起点，终点，位置;
+// 第二个参数代码是否显示图标
+const { routeFeature, geoMarker, startMarker, endMarker, position } = getRoutes(_routes, false); 
+const layer = lineStringLayer([routeFeature, geoMarker, startMarker, endMarker], 'lineLayerStringName'); // 得到图层
+map.addLayer(layer); // 上显图层
+map.setZIndex(998); // 线上倒数第二层
 ```
+
+### 修改样式
+- 现阶段以快速开发为主，所以解出style.js修改文件里面的样式就可以了
 
 ### 性能优化
 ```js
-let _layer = map.getLayers().array_.filter((i) => i.values_.name === name)[0];
-if(_layer) {
-    let _source = _layer.getSource();
-    _source.clear();
+let _source = layer.getSource();
+let _features = _source.getFeatures();
 
-if (name == LAYER_NAMES[1]) {
-    _source.addFeatures(state.pointsLayer.getSource().getFeatures());
+// 判断当前对像在数据源中是否存在，不存在则添加，存在则清除在添加
+if (map.getLayers().array_.some(i => i.values_.name == 'lineLayerStringName')) {
+    _source.addFeatures(features);
 } else {
-    _source.addFeatures([routeFeature, geoMarker, startMarker, endMarker]);
-}
+    _source.clear();
+    _source.addFeatures(features);
 }
 ```
 
 ### 文件下载地址
-[FEATURE](../../static/file/map/line/feature.js) | [SOURCE](../../static/file/map/line/source.js) | [LAYER](../../static/file/map/line/layer.js) | | [STYLE](../../static/file/map/point/style.js)
+[LINE](../../static/file/map/line/line.rar)

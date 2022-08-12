@@ -6,7 +6,20 @@
 
 ### 通用方法
 ```js
-//数据展示
+//获取到屏幕的宽度echart字体大小
+const fontChart = function (res) {
+	var clientWidth =
+			window.innerWidth ||
+			document.documentElement.clientWidth ||
+			document.body.clientWidth;
+	if (!clientWidth) return; //报错拦截：
+	let fontSize = clientWidth / 3840;
+	return res * fontSize;
+}
+```
+
+### 数据展示
+```js
 const chartlist = {
   chart1: {
     colorList: ["#00B4FF", "#2751EE", "#C76B30"],
@@ -33,17 +46,6 @@ const chartlist = {
     types: ["bar", "bar"],
   },
 };
-
-//获取到屏幕的宽度echart字体大小
-const fontChart = function (res) {
-	var clientWidth =
-			window.innerWidth ||
-			document.documentElement.clientWidth ||
-			document.body.clientWidth;
-	if (!clientWidth) return; //报错拦截：
-	let fontSize = clientWidth / 3840;
-	return res * fontSize;
-}
 ```
 
 ### 接收参数
@@ -168,4 +170,4 @@ import barChartComp from "@/components/charts/lineChart";
 ```
 
 ### 下载地址
-[VUE2_LINE_CHART](../../../static/vueComp/charts/barChart.vue) | [ES_SAME](../../../static/file/echarts/types.js)
+[VUE2](../../../static/vueComp/charts/barChart_VUE2.vue) | [VUE3](../../../static/vueComp/charts/barChart_VUE3.vue) | [ES_SAME](../../../static/file/echarts/types.js)

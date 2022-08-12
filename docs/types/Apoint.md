@@ -1,5 +1,7 @@
 # 点
 
+> 暂时只有点的类型
+
 ```js
 // types.js
 export const TYPES = {

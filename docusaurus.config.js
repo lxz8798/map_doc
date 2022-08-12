@@ -119,7 +119,7 @@ const config = {
             items: [
               {
                 label: '地图',
-                to: '/docs/api/Ainit',
+                to: '/docs/category/图表类',
               },
             ],
           },
@@ -127,7 +127,7 @@ const config = {
             title: '文档',
             items: [
               {
-                label: '地图',
+                label: '地图初始化',
                 to: '/docs/api/Ainit',
               },
             ],
@@ -154,7 +154,7 @@ const config = {
             items: [
               {
                 label: '目标详情',
-                to: '/docs/mapping',
+                to: '/mapdoc/docs/category/类型',
               }
             ],
           },

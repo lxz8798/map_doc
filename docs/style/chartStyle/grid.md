@@ -1,5 +1,7 @@
 # GRID网格的样式
 
+> GRID网格的样式
+
 ```js
 const GRID_STYLE = {
     //设置内容区域距离周边的距离
